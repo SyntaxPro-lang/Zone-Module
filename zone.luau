@@ -68,6 +68,10 @@ function Zone:GetPlayersInZone()
 	return self.playersInside
 end
 
+function Zone:IsPlayerInZone(player)
+	return self.playersInside[player] ~= nil
+end
+
 function Zone:Destroy()
 	self.Janitor:Destroy()
 	self.PlayerAdded:Destroy()
